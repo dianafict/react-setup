@@ -34,6 +34,7 @@ export function Panel() {
 			.then(res => res.json())
 			.then(res => {
 				setData(res);
+				setIsLoading(false);
 			});
 	}, []);
 
