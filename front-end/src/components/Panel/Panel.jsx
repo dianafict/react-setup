@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "../Button/Button";
 import { List } from "../List/List";
 import styles from "./Panel.module.css";
 
-export function Panel() {
+// export function Panel() {
 	// const [data, setData] = useState([
 	//     {
 	//         id: 1,
@@ -25,19 +25,26 @@ export function Panel() {
 	//     },
 	// ]);
 
+    export function Panel() {
+
 	const [data, setData] = useState([]);
 
-	function handleLoadClick() {
-		fetch("http://localhost:3000/words")
-			.then(res => res.json())
-			.then(res => {
-				setData(res);
-			});
-	}
+    useEffect(() => {
+
+    }, []);
+
+	// function handleLoadClick() {
+	// 	fetch("http://localhost:3000/words")
+	// 		.then(res => res.json())
+	// 		.then(res => {
+	// 			setData(res);
+	// 		});
+	// }
+
 
 	return (
 		<>
-			<Button onClick={handleLoadClick}>Załaduje dane</Button>
+			{/* <Button onClick={handleLoadClick}>Załaduje dane</Button> */}
 			<section className={styles.section}>
 				<List data={data}></List>
 			</section>
